@@ -1,52 +1,233 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈 페이지</title>
+/* 1. 전체 배경색과 기본 폰트 */
+    body {
+        font-family: "Jua", sans-serif;
+        background-color: #F7F8F0;
+        color: #355872;
+        line-height: 1.7;
+        margin: 0;
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    }
+    /* 2. 상단 헤더 꾸미기 */
+    header{
+        background-color: #FFDBFD;
+        color: white;
+        text-align: center;
+        padding: 50px 0;
+    }
+    /* 3. 메뉴바(Nav) 꾸미기 */
+    nav{
+        text-align: center;
+        padding: 15px;
+        background-color: white;           
+    }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #3F72AF
+        }
+        /* 4. 이미지 (사진) 예쁘게 만들기 */
+        img {
+            display: block;
+            margin: 30px auto;
+            width: 250px;
+            border-radius: 50%;
+            border: 10px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        header, footer {
+            padding: 50px 0;
+        }
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
-    <link rel="stylesheet" href="./style.css">
+        main {
+            width: 80;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ddd;
+        }
+        .my-button{
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #63a9ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 20px;
+            transition: 0.3s;
 
-</head>
-<body> 
-    <header>
-        <h1>
-            
-                        <span class="material-symbols-outlined">
-            agriculture
-            </span>
-            "도전하는것은 가장중요하다" 계영성입니다
-                        <span class="material-symbols-outlined">
-            garden_cart
-            </span>
-        </h1>
-    </header>
+        }
+        .my-button:hover{
+            background-color: #112d4e;
+            transform: translateY(-3px);
+        }
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        }
 
-    <nav>
-     <a href="index.html">홈으로</a> |
-        <a href="subjecot.html">전공 탐구</a>
-        </nav>
-    <main>
-        <img src="images/me.webp" alt="내 별명 사진">
-        <p>
-        <ul>
-        <li>취미: 웹툰보기,소설보기</li>
-        <li>장래희망: 부사관            <span class="material-symbols-outlined">
-            sprinkler
-            </span></li>
-        <li>좋아하는음식: 치킨마요덮밥,카레</li>
-        </ul>
-        </p>
-        <a href="#" class="my-button">나에 대해 더 알아보기</a>
-    </main>
 
-    <footer>
-        문의 : 1221qsa@goedu.kr,&copy; all right resevered by 2026 계영성
-    </footer>
-</body>
-</html>
+
+
+
+
+
+        /* 전공페이지 스타일 */
+        .crop-item {
+            display: flex;
+            gap: 50px;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: #f9fdf9;
+        }
+
+        .crop-image {
+            flex: 1;
+        }
+
+        .crop-details {
+            flex: 1.5;
+        }
+
+        .step-guide {
+            border: 1px dashed #4caf50;
+            text-align: center;
+        }
+        
+        /* 1. 주문서 구역 전체 디자인 */
+        #order-area {
+            margin-top: 60px;
+            padding: 30px;
+            background-color: #f4f9f4;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+        }
+
+        /* 2. 🚩Flexbox 마법 적용 구역 */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+        }
+
+        /* 3. 입력창 세부 정렬 */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* 8강 시작 */
+        /* 1. 성함과 연락처 가로 정렬 */
+        .input-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .input-row .input-group {
+            flex: 1; /* 똑같은 비율로 칸 나눠 갖기 */
+        }
+
+/* 2. 입력창을 클릭했을 떄 효과*/
+.input-group input:focus,
+    .input-group textarea:focus{
+    outline: none;
+    border-color: #4caf50; /* 초록색 테두리 */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2); /* 은은한 빛효과 */
+}
+
+/* 3. 배송 방식(select) 깔끔하게 만들기*/
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+.input-group input,
+.input-group textarea{
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: white;
+}
+
+/* 4. 주문 버트 스타일*/
+.order-btn {
+    background-color: #2e7d32; /*배경색 지정*/
+    color: white;   /* 글자색: 흰색 */
+    padding: 15px;  /* 안여백 15px */
+    border: none;   /* 경계선 : 없음 */
+    border-radius: 8px;     /* 모서리를 둥글게 */
+    width: 100%;        /* 폭 : 부모의 100% */
+    font-size: 18px;    /* 폰트 크기 */
+    font-weight: bold;      /* 두껍게 */
+    cursor: pointer;        /* 마우스 포인터 변경 */
+    transition: 0.1s; /* 변화를 부드럽게 */
+}
+
+.order-btn:hover {
+    background-color: #388e3c;
+    transform: translate(2px);
+}
+
+.order-btn:active {
+    transform: translate(5px);
+}
+
+/* 영수증 스타일 */
+.receipt-box {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dashed #4caf50; /* 영수증 느낌의 점선 */
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;    
+}
+
+.receipt-box h3 {
+    color: #2e7d32;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.display-box{
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+#targetlmg {
+    transition: transform 0.3s ease;
+}
+
+.thumb-list{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap:wrap ;
+}
+
+.thumb-list img {
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.2s;
+    width: 100px;
+    height: 100px;
+    object-fit: cover ;
+    border-radius: 10px;
+}
+
+.thumb-list img:hover {
+    border-color: #3f72af;
+    transform: scale(1.1);
+}

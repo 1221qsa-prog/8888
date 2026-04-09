@@ -27,7 +27,8 @@
         </h1>
     </header>
 
-     <nav>
+    <nav>
+        <nav>
      <a href="index.html"><span class="material-symbols-outlined"></span>홈으로</a> |
         <a href="subjecot.html"><span class="material-symbols-outlined"></span>전공 탐구</a>|
         
@@ -37,21 +38,29 @@
     </nav>
 
     <main>
-        <img src="images/me.webp" alt="내 별명 사진">
-        <p>
-        <ul>
-        <li>취미: 웹툰보기,소설보기</li>
-        <li>장래희망: 부사관            <span class="material-symbols-outlined">
-            sprinkler
-            </span></li>
-        <li>좋아하는음식: 치킨마요덮밥,카레</li>
-        </ul>
-        </p>
-        <a href="#" class="my-button">나에 대해 더 알아보기</a>
+
+        <div class="display-box">
+            <img id="targetlmg" src="./images/ddada.jpg" style="width: 100%;
+            max-width: 500px;"/>
+            <p id="targetDesc">4월 7일:방울토마토 첫 수확!</p>
+        </div>
+
+        <div class="thumb-list">
+            <img src="images/ddada.jpg"onclick="show('./images/ddada.jpg','4월 7일:방울토마토 첫 수확!')">
+            <img src="images/zzsc.jpg"onclick="show('./images/zzsc.jpg','4월 9일:비료 주기 실습 완료')">
+        </div>
+      
     </main>
 
     <footer>
         문의 : 1221qsa@goedu.kr,&copy; all right resevered by 2026 계영성
     </footer>
+    <script>
+        function show(imgPath, text){
+            document.getElementById("targetlmg").src=imgPath;
+            document.getElementById("targetDesc").innerText=text;
+        }
+    </script>
+
 </body>
 </html>
